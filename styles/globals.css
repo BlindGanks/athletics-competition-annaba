@@ -31,3 +31,18 @@
   font-family: "poppins";
   src: url("../public/Poppins-SemiBold.otf");
 }
+
+@layer components {
+  .header {
+    @apply relative z-10 w-full h-14 lg:h-36 flex flex-row justify-between items-center bg-redPrimary font-helvetica text-base font-bold text-[#959798] lg:text-white lg:text-2xl drop-shadow-md lg:uppercase;
+  }
+  .nav {
+    @apply h-screen w-screen fixed top-0 flex flex-row transition-all duration-200 ease-out lg:h-full lg:w-full lg:relative;
+  }
+  footer {
+    @apply w-full flex flex-col md:flex-row md:justify-between bg-[#2B2B33] px-[30px] pt-20 space-y-[36px] lg:space-y-0 pb-12 lg:pb-16 lg:px-[10rem] xl:px-[14rem];
+  }
+  footer > div > div {
+    @apply font-helvetica font-normal text-white text-base text-left flex flex-col space-y-[27px];
+  }
+}
