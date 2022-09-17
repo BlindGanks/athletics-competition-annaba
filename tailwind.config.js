@@ -5,7 +5,18 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        helvetica: ["helvetica"],
+        futura: ["futura"],
+        sitka: ["sitka"],
+      },
+      colors: {
+        redPrimary: "#910000",
+        redSecondary: "#580101",
+      },
+    },
   },
+
   plugins: [],
 };
