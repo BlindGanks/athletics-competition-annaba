@@ -2,6 +2,8 @@ import Image from "next/image";
 import React, { useState } from "react";
 import Nav from "./Nav";
 import logo from "../public/logo.jpg";
+import { useRecoilState } from "recoil";
+import { modalState } from "../atoms/modalAtol";
 export const menuItems = [
   // ...
   {
@@ -31,9 +33,13 @@ export const menuItems = [
 ];
 const Header = () => {
   const [slideNavVisible, setSlideNavVisible] = useState(false);
+  const [modalVisible, setModalVisible] = useRecoilState(modalState);
   return (
     <header className="header">
-      <button className="absolute w-[122px] h-[34px] bg-[#006FCF] text-white font-futura text-[18px] lg:text-[28px] leading-[18px] font-normal uppercase -bottom-[34px] right-0 lg:w-[230px] lg:h-[55px] lg:-bottom-[55px]">
+      <button
+        onClick={() => setModalVisible(true)}
+        className="absolute w-[122px] h-[34px] bg-[#006FCF] text-white font-futura text-[18px] lg:text-[28px] leading-[18px] font-normal uppercase -bottom-[34px] right-0 lg:w-[230px] lg:h-[55px] lg:-bottom-[55px]"
+      >
         participer
       </button>
       {/* lgoo */}

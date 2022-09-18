@@ -10,6 +10,7 @@ module.exports = {
         helvetica: ["helvetica"],
         futura: ["futura"],
         sitka: ["sitka"],
+        poppins: ["poppins"],
       },
       colors: {
         redPrimary: "#910000",
@@ -18,5 +19,5 @@ module.exports = {
     },
   },
 
-  plugins: [],
+  plugins: [require("tailwind-scrollbar-hide"), require("@tailwindcss/forms")],
 };

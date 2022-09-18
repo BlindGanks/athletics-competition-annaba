@@ -30,6 +30,7 @@
 @font-face {
   font-family: "poppins";
   src: url("../public/Poppins-SemiBold.otf");
+  font-weight: 600;
 }
 
 @layer components {
@@ -44,5 +45,23 @@
   }
   footer > div > div {
     @apply font-helvetica font-normal text-white text-base text-left flex flex-col space-y-[27px];
+  }
+  .modal-container {
+    @apply h-full w-full absolute inset-0 flex items-center justify-center bg-black/50 z-20 px-[30px] pt-16 pb-5;
+  }
+  .modal {
+    @apply bg-[#EEEEEE] h-full w-full py-6 text-center font-poppins font-semibold text-lg relative;
+  }
+  .modal-form {
+    @apply w-full flex flex-col px-[30px];
+  }
+  .modal-form label {
+    @apply text-black font-helvetica text-xs font-normal mb-1 ml-[1px];
+  }
+  .modal-form input {
+    @apply w-full h-8 text-sm font-helvetica text-black font-bold border-gray-300 border-[1px] pl-2 focus:border-redPrimary focus:ring-redPrimary;
+  }
+  .modal-form .input-error {
+    @apply font-poppins font-normal text-[10px] text-[#D91010] ml-3;
   }
 }
