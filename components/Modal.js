@@ -1,9 +1,8 @@
 import React from "react";
 import { useRecoilState } from "recoil";
 import { modalState } from "../atoms/modalAtol";
-import { CloseIcon } from "./icons";
 import ModalForm from "./ModalForm";
-
+import { CloseIcon } from "./icons";
 const Modal = () => {
   const [modalVisible, setModalVisible] = useRecoilState(modalState);
   return (
