@@ -1,6 +1,97 @@
 import React from "react";
-import { CloseIcon, menuItems } from "./Header";
+import { CloseIcon } from "./Header";
 import MenuItems from "./MenuItems";
+
+const menuItems = [
+  // ...
+  {
+    title: "accueil",
+    url: "/",
+  },
+  {
+    title: "récapitulatif",
+    submenu: [
+      {
+        title: "La Ligue",
+        submenu: [
+          {
+            title: "Présentation",
+            url: "/présentation",
+          },
+          {
+            title: "Les commissions",
+            url: "/les-commissions",
+          },
+        ],
+      },
+      {
+        title: "Les Clubs",
+        submenu: [
+          { title: "Les clubs affiliés", url: "/les-clubs-affiliés" },
+          { title: `S'affilier`, url: "/s'affilier" },
+        ],
+      },
+    ],
+  },
+  {
+    title: "compétitions",
+    submenu: [
+      {
+        title: "Information Des Compétitions",
+        url: "/information-des-compétitions",
+      },
+      {
+        title: "Calendrier Des Compétitions",
+        url: "/calendrier-des-compétitions",
+      },
+      {
+        title: "Programmes Des Journées De Compétitions",
+        url: "/programmes-des-journées-de-compétitions",
+      },
+      {
+        title: "Engagement Des Compétitions",
+        url: "/engagement-des-compétitions",
+      },
+      {
+        title: "Le Modele De’engagement Se Trouve",
+        url: "/le-modele-d’engagement-se-trouve",
+      },
+      {
+        title: "Résultats des compétition",
+        url: "/résultats-des-compétition",
+      },
+    ],
+  },
+  {
+    title: "document",
+    submenu: [
+      {
+        title: "Assemblée Générale 2022",
+        url: "/assemblée-générale-2022",
+      },
+      {
+        title: "Status",
+        url: "/status",
+      },
+      {
+        title: "Plan D’action 2022",
+        url: "/plan-d’action-2022",
+      },
+      {
+        title: "PV Des Réunions Bureaux De La Ligue",
+        url: "/pv-des-réunions-bureaux-de-la-ligue",
+      },
+      {
+        title: "Divers Pv Des Commissions",
+        url: "/divers-pv-des-commissions",
+      },
+    ],
+  },
+  {
+    title: "contact",
+    url: "/contact",
+  },
+];
 
 const Nav = ({ slideNavVisible, setSlideNavVisible }) => {
   return (
@@ -9,14 +100,15 @@ const Nav = ({ slideNavVisible, setSlideNavVisible }) => {
         slideNavVisible ? "translate-x-0" : "-translate-x-full lg:translate-x-0"
       }`}
     >
-      <ul className="pt-7 w-9/12 h-full flex flex-col px-8 bg-white space-y-[24px] lg:space-y-0 lg:flex-grow lg:px-0 lg:justify-between lg:flex-row lg:pt-0 lg:bg-inherit lg:items-center">
+      <ul className="pt-7 w-9/12 h-full flex flex-col px-8 bg-white space-y-[24px] lg:space-y-0 lg:flex-grow lg:px-0 lg:justify-around lg:flex-row lg:pt-0 lg:bg-inherit lg:items-center overflow-y-scroll">
         <span className="font-sitka text-3xl mb-16 text-black lg:hidden">
           Lawa
         </span>
         {menuItems.map((menu, index) => {
-          return <MenuItems items={menu} key={index} />;
+          const depthLevel = 0;
+          return <MenuItems items={menu} key={index} depthLevel={depthLevel} />;
         })}
-        <button className="w-full h-11 rounded-full bg-redPrimary uppuercase font-poppins font-normal text-white !mt-8 lg:hidden">
+        <button className="w-full min-h-[2.75rem] rounded-full bg-redPrimary uppuercase font-poppins font-normal text-white !mt-8 lg:hidden">
           PARTICIPER
         </button>
       </ul>

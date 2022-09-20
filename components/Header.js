@@ -4,33 +4,7 @@ import Nav from "./Nav";
 import logo from "../public/logo.jpg";
 import { useRecoilState } from "recoil";
 import { modalState } from "../atoms/modalAtol";
-export const menuItems = [
-  // ...
-  {
-    title: "web development",
-    url: "web-dev",
-    submenu: [
-      {
-        title: "Frontend",
-        url: "frontend",
-      },
-      {
-        title: "Backend",
-        submenu: [
-          {
-            title: "NodeJS",
-            url: "node",
-          },
-          {
-            title: "PHP",
-            url: "php",
-          },
-        ],
-      },
-    ],
-  },
-  // ...
-];
+
 const Header = () => {
   const [slideNavVisible, setSlideNavVisible] = useState(false);
   const [modalVisible, setModalVisible] = useRecoilState(modalState);
