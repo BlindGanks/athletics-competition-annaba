@@ -34,6 +34,9 @@
 }
 
 @layer components {
+  path svg {
+    @apply fill-current;
+  }
   .header {
     @apply relative z-10 w-full h-14 lg:h-36 flex flex-row justify-between items-center bg-redPrimary drop-shadow-md;
   }
@@ -47,7 +50,7 @@
     @apply font-helvetica font-normal text-white text-base text-left flex flex-col space-y-[27px];
   }
   .dropdown {
-    @apply space-y-[24px] lg:space-y-[46px] min-w-[313px] flex flex-col justify-center lg:bg-redSecondary list-disc px-4 lg:py-8 lg:list-none overflow-hidden transition-all duration-200;
+    @apply space-y-[24px] lg:space-y-[46px] lg:min-w-[313px] flex flex-col justify-center lg:bg-redSecondary list-disc px-4 lg:py-8 lg:list-none overflow-hidden transition-all duration-200;
   }
 
   .dropdown-submenu {

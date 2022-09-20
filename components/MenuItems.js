@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { useState, useEffect, useRef } from "react";
 import Dropdown from "./Dropdown";
-import { ArrowIcon } from "./Header";
+import { ArrowDownIcon, ArrowRightIcon } from "./icons";
 
 const MenuItems = ({ items, depthLevel }) => {
   let ref = useRef();
@@ -30,15 +30,17 @@ const MenuItems = ({ items, depthLevel }) => {
           <span
             onClick={() => setDropdown((prev) => !prev)}
             type="button"
-            className="w-full items-end flex flex-row justify-between cursor-pointer"
+            className="w-full items-center flex flex-row justify-between cursor-pointer"
           >
             {items.title}
-            {items.submenu ? (
-              <ArrowIcon
-                style={`${
-                  dropdown && depthLevel > 0 ? "rotate-0 " : ""
-                }  rotate-90 ml-3`}
-                color="#ffffff"
+            {items.submenu && depthLevel < 1 ? (
+              <ArrowDownIcon style="text-black lg:text-white" />
+            ) : null}
+            {items.submenu && depthLevel > 0 ? (
+              <ArrowRightIcon
+                style={`text-black lg:text-white ${
+                  dropdown ? "rotate-90" : ""
+                }`}
               />
             ) : null}
           </span>

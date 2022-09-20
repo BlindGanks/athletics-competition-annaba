@@ -6,7 +6,7 @@ const Dropdown = ({ submenus, dropdown, depthLevel }) => {
   const dropdownClass = depthLevel > 1 ? "dropdown-submenu" : "";
   return (
     <div
-      className={`relative px-7 flex flex-col justify-center mt-6 lg:mt-0 lg:absolute lg:pt-[56px] lg:px-0 lg:min-w-[313px] ${
+      className={`relative pl-7 flex flex-col justify-center mt-6 lg:mt-0 lg:absolute lg:pt-[56px] lg:px-0 lg:min-w-[313px] ${
         dropdown ? "flex" : "hidden"
       }`}
     >
@@ -14,8 +14,8 @@ const Dropdown = ({ submenus, dropdown, depthLevel }) => {
         className={`hidden w-0 h-0 
         border-t-[18px] border-t-transparent
         border-l-[28px] border-l-redSecondary
-        border-b-[18px] border-b-transparent -rotate-90 absolute top-[27px] xl:top-[25px] left-[30px] lg:block transition-all duration-200 ${
-          depthLevel > 0 ? "hidden" : "block"
+        border-b-[18px] border-b-transparent -rotate-90 absolute top-[27px] xl:top-[25px] left-[30px] lg:block ${
+          depthLevel > 1 ? "!hidden" : "block"
         } ${dropdown ? "opacity-100" : "opacity-0"}`}
       ></div>
       <ul className={`dropdown ${dropdownClass}`}>

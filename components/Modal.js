@@ -1,7 +1,7 @@
 import React from "react";
 import { useRecoilState } from "recoil";
 import { modalState } from "../atoms/modalAtol";
-import { CloseIcon } from "./Header";
+import { CloseIcon } from "./icons";
 import ModalForm from "./ModalForm";
 
 const Modal = () => {

@@ -1,5 +1,5 @@
 import React from "react";
-import { CloseIcon } from "./Header";
+import { CloseIcon } from "./icons";
 import MenuItems from "./MenuItems";
 
 const menuItems = [
