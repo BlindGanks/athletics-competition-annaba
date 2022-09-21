@@ -17,9 +17,8 @@ const Header = () => {
       >
         participer
       </button>
-      {/* lgoo */}
       <div className="relative w-36 lg:min-w-[10rem] xl:min-w-[14rem] h-full flex items-center justify-center bg-white">
-        <Image className="object-contain" layout="fill" src={logo} />
+        <Image alt="logo" className="object-contain" layout="fill" src={logo} />
       </div>
       <Nav
         slideNavVisible={slideNavVisible}

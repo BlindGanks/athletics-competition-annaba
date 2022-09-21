@@ -14,6 +14,7 @@ export default function Home() {
           <div className="w-full lg:max-w-[398px] h-72">
             <div className="relative w-full h-48">
               <Image
+                alt="marathon image"
                 priority
                 src={heroPic}
                 objectFit="cover"

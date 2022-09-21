@@ -8,7 +8,7 @@ const Custom404 = () => {
     <main className="h-screen flex items-center justify-center">
       <div className="relative px-[30px] w-full flex items-center justify-center">
         <div className="absolute h-[33rem] w-full md:max-w-[34.5rem] lg:h-[42.5rem] lg:max-w-[44.5rem] ">
-          <Image src={bloblPic} layout="fill" objectFit="cover" />
+          <Image alt="blob" src={bloblPic} layout="fill" objectFit="cover" />
         </div>
         <div className="h-80 w-full bg-white z-10 rounded-[26px] flex flex-col justify-between py-5 px-6 md:max-w-[327px] lg:py-16 lg:px-10 lg:max-w-[526px] lg:h-[476px]">
           <div className="flex flex-col items-center">
