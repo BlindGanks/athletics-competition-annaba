@@ -50,7 +50,12 @@ const ModalForm = () => {
           <span className="input-error">{formik.errors.email}</span>
         ) : null}
       </div>
-      <button type="submit">Submit</button>
+      <button
+        type="submit"
+        className="bg-[#AE1010]/40 uppercase px-14 py-2 text-center font-semibold text-white rounded-full"
+      >
+        participer
+      </button>
     </form>
   );
 };

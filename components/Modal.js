@@ -24,9 +24,6 @@ const Modal = () => {
           participer
         </h3>
         <ModalForm />
-        <button className="bg-[#AE1010]/40 uppercase px-14 py-2 text-center font-semibold text-white rounded-full">
-          participer
-        </button>
       </div>
     </div>
   );

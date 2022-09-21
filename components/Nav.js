@@ -100,7 +100,7 @@ const Nav = ({ slideNavVisible, setSlideNavVisible }) => {
         slideNavVisible ? "translate-x-0" : "-translate-x-full lg:translate-x-0"
       }`}
     >
-      <ul className="pt-7 w-9/12 h-full flex flex-col px-8 bg-white space-y-[24px] lg:space-y-0 lg:flex-grow lg:px-0 lg:justify-around lg:flex-row lg:pt-0 lg:bg-inherit lg:items-center overflow-y-scroll">
+      <ul className="pt-7 w-9/12 h-full flex flex-col px-8 bg-white space-y-[24px] lg:space-y-0 lg:flex-grow lg:px-0 lg:justify-around lg:flex-row lg:pt-0 lg:bg-inherit lg:items-center overflow-y-scroll lg:overflow-auto">
         <span className="font-sitka text-3xl mb-16 text-black lg:hidden">
           Lawa
         </span>
