@@ -1,3 +1,4 @@
+import React from "react";
 import MenuItems from "./MenuItems";
 
 const Dropdown = ({ submenus, dropdown, depthLevel }) => {
@@ -27,4 +28,4 @@ const Dropdown = ({ submenus, dropdown, depthLevel }) => {
   );
 };
 
-export default Dropdown;
+export default React.memo(Dropdown);

@@ -5,6 +5,8 @@ const ModalForm = () => {
   const formik = useFormik({
     initialValues: {
       email: "",
+      firstName: "",
+      lastName: "",
     },
     validationSchema: Yup.object({
       firstName: Yup.string()
@@ -60,4 +62,4 @@ const ModalForm = () => {
   );
 };
 
-export default ModalForm;
+export default React.memo(ModalForm);
