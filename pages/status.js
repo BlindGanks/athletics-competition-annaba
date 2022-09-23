@@ -1,5 +1,4 @@
 import Image from "next/image";
-import React from "react";
 import texturePic from "../public/texture.png";
 import statusPage35 from "../public/status-page-35.jpg";
 import statusPage36 from "../public/status-page-36.jpg";

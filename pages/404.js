@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
 import { Error404Icon } from "../components/icons";
 import bloblPic from "../public/blob.png";
 const Custom404 = () => {

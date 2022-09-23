@@ -1,8 +1,8 @@
-import React from "react";
 import { useRecoilState } from "recoil";
-import { modalState } from "../atoms/modalAtol";
+import { modalState } from "../atoms/modalAtom";
 import ModalForm from "./ModalForm";
 import { CloseIcon } from "./icons";
+import { memo } from "react";
 const Modal = () => {
   const [modalVisible, setModalVisible] = useRecoilState(modalState);
   return (
@@ -29,4 +29,4 @@ const Modal = () => {
   );
 };
 
-export default React.memo(Modal);
+export default memo(Modal);

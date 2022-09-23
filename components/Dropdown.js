@@ -1,4 +1,4 @@
-import React from "react";
+import { memo } from "react";
 import MenuItems from "./MenuItems";
 
 const Dropdown = ({ submenus, dropdown, depthLevel }) => {
@@ -20,12 +20,13 @@ const Dropdown = ({ submenus, dropdown, depthLevel }) => {
         } ${dropdown ? "opacity-100" : "opacity-0"}`}
       ></div>
       <ul className={`dropdown ${dropdownClass}`}>
-        {submenus.map((submenu, index) => (
-          <MenuItems items={submenu} key={index} depthLevel={depthLevel} />
-        ))}
+        {dropdown &&
+          submenus.map((submenu, index) => (
+            <MenuItems items={submenu} key={index} depthLevel={depthLevel} />
+          ))}
       </ul>
     </div>
   );
 };
 
-export default React.memo(Dropdown);
+export default memo(Dropdown);

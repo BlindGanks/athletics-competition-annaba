@@ -1,5 +1,5 @@
 import { useFormik } from "formik";
-import React from "react";
+import { memo } from "react";
 import * as Yup from "yup";
 const ModalForm = () => {
   const formik = useFormik({
@@ -62,4 +62,4 @@ const ModalForm = () => {
   );
 };
 
-export default React.memo(ModalForm);
+export default memo(ModalForm);

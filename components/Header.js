@@ -1,36 +1,16 @@
 import Image from "next/image";
-import React, { useState } from "react";
 import Nav from "./Nav";
 import logo from "../public/logo.jpg";
-import { useRecoilState } from "recoil";
-import { modalState } from "../atoms/modalAtol";
-import { BurgerMenuIcon } from "./icons";
+import BurgerMenuButton from "./BurgerMenuButton";
 
 const Header = () => {
-  const [slideNavVisible, setSlideNavVisible] = useState(false);
-  const [modalVisible, setModalVisible] = useRecoilState(modalState);
   return (
     <header className="header">
-      <button
-        onClick={() => setModalVisible(true)}
-        className="absolute w-[122px] h-[34px] bg-[#006FCF] text-white font-futura text-[18px] lg:text-[28px] leading-[18px] font-normal uppercase -bottom-[34px] right-0 lg:w-[230px] lg:h-[55px] lg:-bottom-[55px]"
-      >
-        participer
-      </button>
       <div className="relative w-36 lg:min-w-[10rem] xl:min-w-[14rem] h-full flex items-center justify-center bg-white">
         <Image alt="logo" className="object-contain" layout="fill" src={logo} />
       </div>
-      <Nav
-        slideNavVisible={slideNavVisible}
-        setSlideNavVisible={setSlideNavVisible}
-      />
-      <button
-        onClick={() => setSlideNavVisible(true)}
-        type="button"
-        className="pr-4 lg:hidden"
-      >
-        <BurgerMenuIcon />
-      </button>
+      <Nav />
+      <BurgerMenuButton />
     </header>
   );
 };

@@ -1,5 +1,3 @@
-import React from "react";
-
 const Contact = ({ icon, title = "", content }) => {
   return (
     <div className="relative w-full bg-white text-center pt-8 pb-5 px-4 2xl:h-[232px] 2xl:max-w-[456px] 2xl:pt-14">

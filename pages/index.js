@@ -1,10 +1,12 @@
 import Image from "next/image";
 import Hero from "../components/Hero";
+import ParticipateButton from "../components/ParticipateButton";
 import heroPic from "../public/heroPic.jpg";
 
 export default function Home() {
   return (
-    <main className="mb-12 md:mb-20">
+    <main className="relative mb-12 md:mb-20">
+      <ParticipateButton />
       <Hero />
       <div className="w-full pt-[280px] md:pt-[200px] lg:pt-[80px] px-[30px] lg:px-[3rem] xl:px-[14rem]">
         <div className="w-full mx-auto bg-white">

@@ -1,5 +1,4 @@
-import Link from "next/link";
-import React, { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, memo } from "react";
 import Dropdown from "./Dropdown";
 import { ArrowDownIcon, ArrowRightIcon } from "./icons";
 
@@ -51,10 +50,10 @@ const MenuItems = ({ items, depthLevel }) => {
           />
         </>
       ) : (
-        <Link href={items.url}>{items.title}</Link>
+        <a href={items.url}>{items.title}</a>
       )}
     </li>
   );
 };
 
-export default React.memo(MenuItems);
+export default memo(MenuItems);

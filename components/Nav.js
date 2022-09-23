@@ -1,4 +1,6 @@
-import React from "react";
+import { useState } from "react";
+import { useRecoilState } from "recoil";
+import { sideMenuState } from "../atoms/sideMenuAtom";
 import { CloseIcon } from "./icons";
 import MenuItems from "./MenuItems";
 
@@ -93,11 +95,13 @@ const menuItems = [
   },
 ];
 
-const Nav = ({ slideNavVisible, setSlideNavVisible }) => {
+const Nav = () => {
+  const [sideMenuVisible, setSideMenuVisible] = useRecoilState(sideMenuState);
+
   return (
     <nav
       className={`nav ${
-        slideNavVisible ? "translate-x-0" : "-translate-x-full lg:translate-x-0"
+        sideMenuVisible ? "translate-x-0" : "-translate-x-full lg:translate-x-0"
       }`}
     >
       <ul className="pt-7 w-9/12 h-full flex flex-col px-8 bg-white space-y-[24px] lg:space-y-0 lg:flex-grow lg:px-0 lg:justify-around lg:flex-row lg:pt-0 lg:bg-inherit lg:items-center overflow-y-scroll lg:overflow-auto">
@@ -113,7 +117,7 @@ const Nav = ({ slideNavVisible, setSlideNavVisible }) => {
         </button>
       </ul>
       <div
-        onClick={() => setSlideNavVisible(false)}
+        onClick={() => setSideMenuVisible(false)}
         className="w-1/4 h-full bg-black/70 flex justify-center lg:hidden"
       >
         <div className="mt-7">

@@ -1,5 +1,4 @@
 import Image from "next/image";
-import React from "react";
 import heroPic from "../public/heroPic.jpg";
 import Countdown from "./Countdown";
 const Hero = () => {
