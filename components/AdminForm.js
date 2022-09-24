@@ -1,7 +1,13 @@
 import * as Yup from "yup";
 import { useFormik } from "formik";
+import { auth } from "../firebase";
+import { useRecoilState } from "recoil";
+import { userState } from "../atoms/userAtom";
+import { memo } from "react";
+import { signInWithEmailAndPassword, signOut } from "firebase/auth";
 
 const AdminForm = () => {
+  const [, setUser] = useRecoilState(userState);
   const formik = useFormik({
     initialValues: {
       email: "",
@@ -11,8 +17,16 @@ const AdminForm = () => {
       password: Yup.string().required("Required"),
       email: Yup.string().email("Invalid email address").required("Required"),
     }),
-    onSubmit: (values) => {
-      alert(JSON.stringify(values, null, 2));
+    onSubmit: ({ email, password }) => {
+      signInWithEmailAndPassword(auth, email, password)
+        .then(({ user }) => {
+          setUser({ ...user, isAdmin: true });
+          formik.setSubmitting(false);
+        })
+        .catch((error) => {
+          formik.setSubmitting(false);
+          alert(error.message);
+        });
     },
   });
   return (
@@ -23,8 +37,8 @@ const AdminForm = () => {
       <div className="h-[1px] bg-[#707070] w-full mb-7 lg:mb-12"></div>
       <div className="flex flex-col items-start mb-[15px] lg:mb-10 w-full">
         <input
+          name="email"
           placeholder="Email"
-          id="email"
           type="email"
           {...formik.getFieldProps("email")}
         />
@@ -35,7 +49,7 @@ const AdminForm = () => {
       <div className="flex flex-col items-start mb-[26px] lg:mb-14 w-full">
         <input
           placeholder="Mot De Passe"
-          id="password"
+          name="password"
           type="password"
           {...formik.getFieldProps("password")}
         />
@@ -44,7 +58,12 @@ const AdminForm = () => {
         ) : null}
       </div>
       <button
-        className="w-full h-11 bg-[#AE1010]/40 text-white font-poppins font-semibold text-xl rounded-full lg:h-[74px]"
+        disabled={formik.isSubmitting}
+        className={`w-full h-11 text-white font-poppins font-semibold text-xl rounded-full lg:h-[74px] ${
+          formik.isValid && !formik.isSubmitting
+            ? "bg-[#AE1010]"
+            : "bg-[#AE1010]/40"
+        }`}
         type="submit"
       >
         Connexion
@@ -53,4 +72,4 @@ const AdminForm = () => {
   );
 };
 
-export default AdminForm;
+export default memo(AdminForm);
