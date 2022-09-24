@@ -1,8 +1,9 @@
 import Image from "next/image";
-import React, { useEffect } from "react";
 import { useRecoilState } from "recoil";
 import { userState } from "../atoms/userAtom";
 import AdminForm from "../components/AdminForm";
+import ParticipationsListDesktopView from "../components/ParticipationsListDesktopView";
+import ParticipationsListMobileView from "../components/ParticipationsListMobileView";
 import texturePic from "../public/texture.png";
 const Admin = () => {
   const [user, setUser] = useRecoilState(userState);
@@ -21,14 +22,19 @@ const Admin = () => {
             objectFit="cover"
           />
         </div>
-        Contact
+        Page D'administration
       </div>
       {!user && (
         <div className="px-[30px] h-full">
           <AdminForm />
         </div>
       )}
-      {user && <h1>{user.email}</h1>}
+      {user && (
+        <>
+          <ParticipationsListMobileView />
+          <ParticipationsListDesktopView />
+        </>
+      )}
     </main>
   );
 };
