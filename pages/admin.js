@@ -22,7 +22,7 @@ const Admin = () => {
             objectFit="cover"
           />
         </div>
-        Page D'administration
+        Page D&apos;administration
       </div>
       {!user && (
         <div className="px-[30px] h-full">
