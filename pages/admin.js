@@ -4,7 +4,7 @@ import { useRecoilState } from "recoil";
 import { userState } from "../atoms/userAtom";
 import AdminForm from "../components/AdminForm";
 import texturePic from "../public/texture.png";
-const admin = () => {
+const Admin = () => {
   const [user, setUser] = useRecoilState(userState);
   return (
     <main className="h-full w-full">
@@ -33,4 +33,4 @@ const admin = () => {
   );
 };
 
-export default admin;
+export default Admin;
