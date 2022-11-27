@@ -30,7 +30,10 @@ const menuItems = [
         title: "Les Clubs",
         submenu: [
           { title: "Les clubs affiliés", url: "/les-clubs-affiliés" },
-          { title: `S'affilier`, url: "/s'affilier" },
+          {
+            title: `S'affilier`,
+            url: "/documents/affiliation  2022-2023 LAWA23BB.pdf",
+          },
         ],
       },
     ],
@@ -73,7 +76,7 @@ const menuItems = [
       },
       {
         title: "Status",
-        url: "/status",
+        url: "/documents/STATUT-2016 LAWA23.pdf",
       },
       {
         title: "Plan D’action 2022",
