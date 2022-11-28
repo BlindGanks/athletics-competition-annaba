@@ -49,7 +49,7 @@ const Status = () => {
             objectFit="cover"
           />
         </div>
-        S'affilier
+        Statut
       </div>
       <div className="w-full flex flex-wrap space-y-4 py-4 px-4 lg:py-8 lg:px-8">
         <div className="relative  h-[30rem] lg:h-[41rem] xl:h-[58rem] 2xl:h-[75rem] w-full">
