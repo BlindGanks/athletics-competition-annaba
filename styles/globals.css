@@ -55,7 +55,7 @@
     @apply fill-current;
   }
   .header {
-    @apply relative z-20 w-full h-14 lg:h-36 flex flex-row justify-between items-center bg-redPrimary drop-shadow-md;
+    @apply relative z-20 w-full h-[3.75rem] lg:h-[8.688rem] flex flex-row justify-between items-center bg-redPrimary drop-shadow-md;
   }
   .nav {
     @apply h-screen w-screen fixed top-0 flex flex-row transition-all duration-200 ease-out lg:h-full lg:w-full lg:relative;
@@ -79,17 +79,17 @@
   .modal {
     @apply bg-[#EEEEEE] w-full md:max-w-[530px] py-6 text-center font-poppins font-semibold text-lg relative;
   }
-  .modal-form {
+  .participation-form {
     @apply w-full flex flex-col px-[30px];
   }
-  .modal-form label {
-    @apply text-black font-helvetica text-xs font-normal mb-1 ml-[1px];
+  .participation-form label {
+    @apply text-black font-helvetica text-xl font-normal mb-1 ml-[1px];
   }
-  .modal-form input {
-    @apply w-full h-8 text-sm font-helvetica text-black font-bold border-gray-300 border-[1px] pl-2 focus:border-redPrimary focus:ring-redPrimary;
+  .participation-form input {
+    @apply w-full h-[3.188rem] text-sm font-helvetica text-black font-bold border-gray-300 border-[1px] pl-2 focus:border-redPrimary focus:ring-redPrimary;
   }
   .input-error {
-    @apply font-poppins font-normal text-[10px] lg:text-base text-[#D91010] ml-3;
+    @apply font-poppins font-normal text-[15px] lg:text-base text-[#D91010] ml-3;
   }
   .admin-form {
     @apply bg-white w-full min-h-[333px] mt-[38%] flex flex-col items-center pb-7 pt-5 lg:pt-8 lg:pb-11 px-6 md:max-w-[562px] lg:min-h-[561px] md:mt-[14%] xl:mt-[8%] mx-auto;

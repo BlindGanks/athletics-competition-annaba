@@ -7,7 +7,7 @@ const Dropdown = ({ submenus, dropdown, depthLevel }) => {
   const dropdownClass = depthLevel > 1 ? "dropdown-submenu" : "";
   return (
     <div
-      className={`relative pl-7 flex flex-col justify-center mt-6 lg:mt-0 lg:absolute lg:pt-[56px] lg:px-0 lg:min-w-[313px] ${
+      className={`relative pl-7 flex flex-col justify-center mt-6 lg:mt-0 lg:absolute lg:pt-[53px] lg:px-0 lg:min-w-[313px] ${
         dropdown ? "flex" : "hidden"
       }`}
     >

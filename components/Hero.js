@@ -13,7 +13,7 @@ const Hero = () => {
         className="filter brightness-50 absolute inset-0"
       />
       <div className="absolute -bottom-[250px] md:-bottom-[160px] lg:bottom-0 w-full">
-        <div className="h-[23rem] md:h-72 lg:h-[517px] lg:w-[886px] w-full bg-white mb-10 -ml-[30px] pl-[60px] lg:ml-0 lg:pl-[10rem] xl:pl-[14rem]">
+        <div className="h-[23rem] md:h-72 lg:h-[517px] lg:w-[886px] w-full bg-white mb-[3.063rem] -ml-[30px] pl-[60px] lg:ml-0 lg:pl-[10rem] xl:pl-[14rem]">
           <div className="h-full flex flex-col justify-center">
             <h2 className="text-redPrimary font-futura text-[25px] lg:text-[47px]">
               La Ligue D&apos;athlétisme <br />
