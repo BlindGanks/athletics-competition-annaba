@@ -39,7 +39,7 @@ import statut36 from "../public/STATUT 2016 LAWA/STATUT 2016 LAWA23-36.webp";
 
 const Status = () => {
   return (
-    <main className="overflow-y-scroll">
+    <main className="overflow-y-scroll h-full">
       <div className="relative h-20 w-full bg-redSecondary/90 pl-[30px] flex items-center font-helvetica font-bold text-2xl text-white overflow-hidden 2xl:h-[154px] xl:pl-[14rem] xl:text-[40px]">
         <div className="mix-blend-color-burn absolute inset-0 h-64 w-full">
           <Image
