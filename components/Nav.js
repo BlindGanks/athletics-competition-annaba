@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { useRecoilState } from "recoil";
 import { sideMenuState } from "../atoms/sideMenuAtom";
 import { CloseIcon } from "./icons";
@@ -32,7 +31,7 @@ const menuItems = [
           { title: "Les clubs affiliés", url: "/les-clubs-affiliés" },
           {
             title: `S'affilier`,
-            url: "/documents/affiliation  2022-2023 LAWA23BB.pdf",
+            url: "/s'affilier",
           },
         ],
       },
@@ -76,7 +75,7 @@ const menuItems = [
       },
       {
         title: "Status",
-        url: "/documents/STATUT-2016 LAWA23.pdf",
+        url: "/status",
       },
       {
         title: "Plan D’action 2022",
