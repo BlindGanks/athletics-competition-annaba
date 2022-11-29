@@ -18,11 +18,11 @@ const ModalForm = () => {
       email: Yup.string().email("Invalid email address").required("Required"),
     }),
     onSubmit: (values) => {
-      alert(JSON.stringify(values, null, 2));
+      alert("pas disponible pour le moment");
     },
   });
   return (
-    <form className="modal-form" onSubmit={formik.handleSubmit}>
+    <form className="participation-form" onSubmit={formik.handleSubmit}>
       <div className="flex flex-col items-start mb-[15px]">
         <label htmlFor="firstName">First Name</label>
         <input
