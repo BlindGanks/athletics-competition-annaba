@@ -8,8 +8,9 @@ import {
   Timestamp,
 } from "firebase/firestore";
 import { db } from "../firebase";
+import { toast } from "react-toastify";
 
-const ModalForm = () => {
+const ModalForm = ({ setModalVisible }) => {
   const formik = useFormik({
     initialValues: {
       email: "",
@@ -41,14 +42,19 @@ const ModalForm = () => {
         const snapshot = await getCountFromServer(coll);
         const docCount = snapshot.data().count;
         await addDoc(coll, { ...docData, bibNumber: docCount + 1 });
-        alert("votre demande de participation a été envoyée avec succès.");
+        toast.success(
+          "votre demande de participation a été envoyée avec succès."
+        );
       } catch (err) {
-        alert(
+        toast.error(
           "échec de l'envoi de la demande de participation, veuillez réessayer dans quelques instants."
         );
         console.log(err);
       }
+
+      setModalVisible(false);
       formik.setSubmitting(false);
+      formik.resetForm();
     },
   });
   const { isValid, isSubmitting, isValidating } = formik;

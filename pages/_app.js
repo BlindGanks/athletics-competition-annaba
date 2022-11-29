@@ -1,9 +1,11 @@
 import Head from "next/head";
+import { ToastContainer } from "react-toastify";
 import { RecoilRoot } from "recoil";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import Modal from "../components/Modal";
 import "../styles/globals.css";
+import "react-toastify/dist/ReactToastify.css";
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -13,6 +15,11 @@ function MyApp({ Component, pageProps }) {
           <title>Compéetition Athlétique Annaba</title>
           <link rel="icon" href="/favicon.ico" />
         </Head>
+        <ToastContainer
+          autoClose={false}
+          position="bottom-right"
+          theme="dark"
+        />
         <Modal />
         <Header />
         <Component {...pageProps} />

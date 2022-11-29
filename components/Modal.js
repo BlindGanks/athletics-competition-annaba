@@ -23,7 +23,7 @@ const Modal = () => {
         <h3 className="text-center font-futura font-normal text-2xl text-redPrimary uppercase pb-7">
           participer
         </h3>
-        <ModalForm />
+        <ModalForm setModalVisible={setModalVisible} />
       </div>
     </div>
   );
