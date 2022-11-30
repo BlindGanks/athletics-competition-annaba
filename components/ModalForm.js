@@ -35,29 +35,35 @@ const ModalForm = ({ setModalVisible }) => {
         email,
         firstName,
         lastName,
-        dateSent: Timestamp.now(),
       };
-      const coll = collection(db, "participations");
-      try {
-        const snapshot = await getCountFromServer(coll);
-        const docCount = snapshot.data().count;
-        await addDoc(coll, { ...docData, bibNumber: docCount + 1 });
-        toast.success(
-          "votre demande de participation a été envoyée avec succès."
-        );
-      } catch (err) {
+
+      const request = await fetch("/api/send-participation-req", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(docData),
+      }).then((res) => res.json());
+
+      setModalVisible(false);
+      formik.resetForm();
+      formik.setSubmitting(false);
+
+      if (!request.success) {
         toast.error(
           "échec de l'envoi de la demande de participation, veuillez réessayer dans quelques instants."
         );
-        console.log(err);
+        console.error(request.error);
+        return;
       }
-
-      setModalVisible(false);
-      formik.setSubmitting(false);
-      formik.resetForm();
+      toast.success(
+        "votre demande de participation a été envoyée avec succès."
+      );
     },
   });
+
   const { isValid, isSubmitting, isValidating } = formik;
+
   return (
     <form className="participation-form" onSubmit={formik.handleSubmit}>
       <div className="flex flex-col items-start mb-[15px]">
