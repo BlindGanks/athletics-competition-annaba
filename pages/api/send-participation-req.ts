@@ -16,10 +16,15 @@ export default async function handler(req, res) {
 
   const docData = req.body;
 
+  const dateSchema = z.preprocess((arg) => {
+    if (typeof arg == "string" || arg instanceof Date) return new Date(arg);
+  }, z.date());
+
   const ParticipationReq = z.object({
     email: z.string().email(),
     firstName: z.string(),
     lastName: z.string(),
+    dateSent: dateSchema,
   });
 
   const validation = ParticipationReq.safeParse(docData);
@@ -38,7 +43,6 @@ export default async function handler(req, res) {
     const newDoc = await collectionRef.add({
       ...docData,
       bibNumber: docCount + 1,
-      time: new Date().toString(),
     });
 
     res.status(201).send({ success: true });

@@ -35,8 +35,8 @@ const ModalForm = ({ setModalVisible }) => {
         email,
         firstName,
         lastName,
+        dateSent: new Date().toString(),
       };
-
       const request = await fetch("/api/send-participation-req", {
         method: "POST",
         headers: {
