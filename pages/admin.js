@@ -1,12 +1,11 @@
 import Image from "next/image";
-import { useRecoilState } from "recoil";
-import { userState } from "../atoms/userAtom";
 import AdminForm from "../components/AdminForm";
 import ParticipationsListDesktopView from "../components/ParticipationsListDesktopView";
 import ParticipationsListMobileView from "../components/ParticipationsListMobileView";
 import texturePic from "../public/texture.png";
+import { useUser } from "../state-store";
 const Admin = () => {
-  const [user, setUser] = useRecoilState(userState);
+  const user = useUser((state) => state.user);
   return (
     <main className="h-full w-full">
       <div

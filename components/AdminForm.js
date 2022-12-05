@@ -1,13 +1,12 @@
 import * as Yup from "yup";
 import { useFormik } from "formik";
 import { auth } from "../firebase";
-import { useRecoilState } from "recoil";
-import { userState } from "../atoms/userAtom";
 import { memo } from "react";
 import { signInWithEmailAndPassword, signOut } from "firebase/auth";
+import { useUser } from "../state-store";
 
 const AdminForm = () => {
-  const [, setUser] = useRecoilState(userState);
+  const setUser = useUser((state) => state.setUser);
   const formik = useFormik({
     initialValues: {
       email: "",

@@ -1,13 +1,12 @@
 import React from "react";
-import { useRecoilState } from "recoil";
-import { sideMenuState } from "../atoms/sideMenuAtom";
+import { useSideMenuState } from "../state-store";
 import { BurgerMenuIcon } from "./icons";
 
 const BurgerMenuButton = () => {
-  const [sideMenuVisible, setSideMenuVisible] = useRecoilState(sideMenuState);
+  const toggleSideMenuVisible = useSideMenuState((state) => state.toggle);
   return (
     <button
-      onClick={() => setSideMenuVisible(true)}
+      onClick={toggleSideMenuVisible}
       type="button"
       className="pr-4 lg:hidden"
     >

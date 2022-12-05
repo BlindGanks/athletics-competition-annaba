@@ -1,5 +1,4 @@
-import { useRecoilState } from "recoil";
-import { sideMenuState } from "../atoms/sideMenuAtom";
+import { useSideMenuState } from "../state-store";
 import { CloseIcon } from "./icons";
 import MenuItems from "./MenuItems";
 
@@ -98,7 +97,10 @@ const menuItems = [
 ];
 
 const Nav = () => {
-  const [sideMenuVisible, setSideMenuVisible] = useRecoilState(sideMenuState);
+  const [sideMenuVisible, toggleSideMenuVisible] = useSideMenuState((state) => [
+    state.isVisible,
+    state.toggle,
+  ]);
 
   return (
     <nav
@@ -119,7 +121,7 @@ const Nav = () => {
         </button>
       </ul>
       <div
-        onClick={() => setSideMenuVisible(false)}
+        onClick={toggleSideMenuVisible}
         className="w-1/4 h-full bg-black/70 flex justify-center lg:hidden"
       >
         <div className="mt-7">
