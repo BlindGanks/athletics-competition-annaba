@@ -1,13 +1,15 @@
 import Image from "next/image";
 import Hero from "../components/Hero";
 import ParticipateButton from "../components/ParticipateButton";
+import { db } from "../firebase";
 import heroPic from "../public/heroPic.jpg";
+import { doc, getDoc } from "firebase/firestore";
 
-export default function Home() {
+export default function Home({ competitionDateMillis }) {
   return (
     <main className="relative mb-12 md:mb-20">
       <ParticipateButton />
-      <Hero />
+      <Hero competitionDate={new Date(competitionDateMillis)} />
       <div className="w-full pt-[280px] md:pt-[200px] lg:pt-[80px] px-[30px] lg:px-[3rem] xl:px-[14rem]">
         <div className="w-full mx-auto bg-white">
           <div className="bg-redPrimary w-full h-12 pl-4 py-3 text-white font-poppins font-bold text-base mb-5 lg:mb-10">
@@ -37,4 +39,16 @@ export default function Home() {
       </div>
     </main>
   );
+}
+
+export async function getStaticProps() {
+  let competitionDateMillis = null;
+  const docRef = doc(db, "dates", "competition-date");
+  const docSnap = await getDoc(docRef);
+
+  if (docSnap.exists()) competitionDateMillis = docSnap.data().date.toMillis();
+
+  return {
+    props: { competitionDateMillis },
+  };
 }

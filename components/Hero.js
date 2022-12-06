@@ -1,7 +1,7 @@
 import Image from "next/image";
 import heroPic from "../public/heroPic.jpg";
 import Countdown from "./Countdown";
-const Hero = () => {
+const Hero = ({ competitionDate }) => {
   return (
     <div className="relative h-[471px] lg:h-[940px] w-full bg-blue-400">
       <Image
@@ -33,7 +33,7 @@ const Hero = () => {
         </div>
         {/* timer */}
         <div className="h-[68px] md:h-[108px] lg:h-[163px] xl:h-[210px] w-full lg:w-[85%] xl:w-[75%] 2xl:w-[60%] mx-auto lg:px-0 px-[30px]">
-          <Countdown />
+          <Countdown competitionDate={competitionDate} />
         </div>
       </div>
     </div>

@@ -1,6 +1,4 @@
-import { doc, getDoc } from "firebase/firestore";
-import { memo, useEffect, useState } from "react";
-import { db } from "../firebase";
+import { useEffect, useState } from "react";
 
 const timeDiffCalc = (dateFuture, dateNow) => {
   let diffInMilliSeconds = Math.abs(dateFuture - dateNow) / 1000;
@@ -25,16 +23,10 @@ const timeDiffCalc = (dateFuture, dateNow) => {
 
   return difference;
 };
-const getCompetitionDate = async () => {
-  const docRef = doc(db, "dates", "competition-date");
-  const docSnap = await getDoc(docRef);
-  if (!docSnap.exists()) return null;
-  return docSnap.data().date.toDate();
-};
 
 const MILLIS_IN_SECOND = 1000;
 
-const Countdown = () => {
+const Countdown = ({ competitionDate }) => {
   const [remainingTime, setRemainingTime] = useState({
     days: "00",
     hours: "00",
@@ -46,7 +38,6 @@ const Countdown = () => {
       difference,
       isCanceled = false;
     async function startTimer() {
-      const competitionDate = await getCompetitionDate();
       if (!competitionDate) return;
 
       if (isCanceled) return;
@@ -64,7 +55,7 @@ const Countdown = () => {
       isCanceled = true;
       clearInterval(interval);
     };
-  }, []);
+  }, [competitionDate]);
 
   return (
     <div className="flex flex-row justify-between">
